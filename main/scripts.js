@@ -8,6 +8,10 @@ https://jmackas.github.io/2025scripts/main/scripts.js
 To inject into another website:
 document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://jmackas.github.io/2025scripts/main/scripts.js'}));
 
+## Install this and enable for site you want to use scripts on for minimal pain
+https://chromewebstore.google.com/detail/csp-unblock/lkbelpgpclajeekijigjffllhigbhobd?hl=en
++ also this to add js: https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld
+
 #### 
 Add the below to add some code from a different file:
 document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://google.com'}));
