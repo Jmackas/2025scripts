@@ -17,12 +17,13 @@ document.head.appendChild(Object.assign(document.createElement('script'), {src: 
 //
 // All CSS
 //
+/*
 const link = document.createElement('link');
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = 'https://jmackas.github.io/2025scripts/main/styles.css'; // Replace with your remote CSS file URL
 document.head.appendChild(link);
-
+*/
 
 //
 // ClickUp
