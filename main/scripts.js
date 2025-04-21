@@ -11,7 +11,6 @@ document.head.appendChild(Object.assign(document.createElement('script'), {src: 
 //
 // All CSS
 //
-// Create a new <link> element
 const link = document.createElement('link');
 link.rel = 'stylesheet';
 link.type = 'text/css';
