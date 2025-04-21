@@ -34,5 +34,15 @@ document.head.appendChild(link);
 //
 // ClickUp
 //
+if (window.location.hostname === "app.clickup.com") {
+  
 document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://jmackas.github.io/2025scripts/main/clickup/windowed-mode.js'}));
+
+
+document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://jmackas.github.io/2025scripts/main/misc/disable-ctrl-s.js'}));
+
+
+
+}
+
 
