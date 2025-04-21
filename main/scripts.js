@@ -21,10 +21,6 @@ const link = document.createElement('link');
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = 'https://jmackas.github.io/2025scripts/main/styles.css'; // Replace with your remote CSS file URL
-
-
-
-// Append the <link> element to the <head> of the document
 document.head.appendChild(link);
 
 
