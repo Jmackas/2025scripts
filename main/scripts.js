@@ -25,8 +25,11 @@ link.href = 'https://jmackas.github.io/2025scripts/main/styles.css'; // Replace 
 document.head.appendChild(link);
 
 
+
+
 //
 // ClickUp
 //
-document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://jmackas.github.io/2025scripts/main/clickup/windowed-mode.js'}));
+// document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://jmackas.github.io/2025scripts/main/clickup/windowed-mode.js'}));
 
+import { greet } from './clickup/windowed-mode.js';
