@@ -1,4 +1,9 @@
-document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://code.jquery.com/jquery-3.7.1.js'}));
+/*
+
+Add the below to add some code from a different file:
+document.head.appendChild(Object.assign(document.createElement('script'), {src: 'https://google.com'}));
+
+*/
 
 console.log("helloooo");
 
