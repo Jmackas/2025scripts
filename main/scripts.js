@@ -11,4 +11,5 @@ document.head.appendChild(Object.assign(document.createElement('script'), {src: 
 //
 // ClickUp
 //
-document.head.appendChild(Object.assign(document.createElement('script'), {src: '/clickup/windowed-mode.js'}));
+script.src = "https://jmackas.github.io/2025scripts/main/clickup/windowed-mode.js";
+
