@@ -52,14 +52,18 @@ observer.observe(document.body, {
 // Inject style
 const style = document.createElement('style');
 style.textContent = `
-  .cu-task-view__inner.layout-v3:not(.full-screen):not(.sidebar-mode) {
-    width: 80% !important;
+.cu-task-view__inner.layout-v3:not(.full-screen):not(.sidebar-mode) {
+    width: 85% !important;
     right: 10% !important;
-    left: 10% !important;
+    left: 7% !important;
     top: 5% !important;
     bottom: 20% !important;
     background: none !important;
-  }
+}
+
+
+
+  
 `;
 document.head.appendChild(style);
 
