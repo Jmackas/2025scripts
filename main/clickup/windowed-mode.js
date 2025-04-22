@@ -18,7 +18,7 @@ function updateGoBackButton() {
   if (!button) {
     const goBackDiv = document.createElement('div');
     goBackDiv.id = 'go-back-button';
-    goBackDiv.textContent = '← Go Back';
+    // goBackDiv.textContent = '← Go Back';
     goBackDiv.style.cursor = 'pointer';
     goBackDiv.style.top = '0';
     goBackDiv.style.opacity = '0.6';
