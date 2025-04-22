@@ -127,7 +127,73 @@ document.head.appendChild(style);
 
 
 
-  
+
+
+///////////////
+/////////////// Open a task in a new window if the expand button is clicked on clickup winddow (when it is in sidebar inbox view)
+///////////////
+(function () {
+  const titleSelector = 'a.title.title_clickable.ng-star-inserted';
+  const fullscreenSelector = '[data-pendo="cu-task-view-header__button-toggle-fullscreen-mode"]';
+
+  let currentHref = null;
+  let anchorWrapper = null;
+
+  function updateLink() {
+    const titleLink = document.querySelector(titleSelector);
+    if (!titleLink) return;
+
+    const newHref = titleLink.href;
+    if (!newHref || newHref === currentHref) return;
+
+    currentHref = newHref;
+
+    let fullscreenButton = document.querySelector(fullscreenSelector);
+    if (!fullscreenButton) return;
+
+    // Clone the button to remove original event listeners
+    const cleanButton = fullscreenButton.cloneNode(true);
+
+    // Replace original button with the clean one
+    fullscreenButton.parentNode.replaceChild(cleanButton, fullscreenButton);
+    fullscreenButton = cleanButton;
+
+    // Remove previous wrapper if it exists
+    if (anchorWrapper) {
+      const oldButton = anchorWrapper.firstChild;
+      anchorWrapper.parentNode.replaceChild(oldButton, anchorWrapper);
+    }
+
+    // Create new anchor wrapper
+    anchorWrapper = document.createElement('a');
+    anchorWrapper.href = currentHref;
+    anchorWrapper.target = '_blank';
+    anchorWrapper.rel = 'noopener noreferrer';
+
+    // Wrap the cleaned button
+    fullscreenButton.parentNode.replaceChild(anchorWrapper, fullscreenButton);
+    anchorWrapper.appendChild(fullscreenButton);
+  }
+
+  // Mutation observer to detect href changes
+  const observer = new MutationObserver(updateLink);
+
+  const observeTitle = () => {
+    const titleLink = document.querySelector(titleSelector);
+    if (titleLink) {
+      observer.disconnect(); // Just in case
+      observer.observe(titleLink, { attributes: true, attributeFilter: ['href'] });
+      updateLink(); // Initial setup
+    } else {
+      setTimeout(observeTitle, 500); // Retry if not found yet
+    }
+  };
+
+  // Run it
+  observeTitle();
+})();
+
+	
 
 }
 
