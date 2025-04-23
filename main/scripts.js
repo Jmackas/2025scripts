@@ -44,6 +44,9 @@ document.addEventListener('keydown', function(e) {
 /////////////// Windowed Mode
 ///////////////
 
+//////////// START SCRIPT BELOW
+
+
 // Function to manage the go-back button depending on class state
 function updateGoBackButton() {
   const target = document.querySelector('.cu-task-view__inner.layout-v3');
@@ -73,7 +76,15 @@ function updateGoBackButton() {
     goBackDiv.style.zIndex = '737';
     goBackDiv.style.width = '100%';
     goBackDiv.style.height = '100%';
-        goBackDiv.onclick = () => {
+    goBackDiv.onclick = () => {
+      // Try clicking a close button if present
+      const closeBtn = document.querySelector('.modal-close, .your-close-class');
+      if (closeBtn) {
+        closeBtn.click();
+        return;
+      }
+
+      // Otherwise, dispatch Escape key event to the focused element
       const escapeEvent = new KeyboardEvent('keydown', {
         key: 'Escape',
         code: 'Escape',
@@ -82,7 +93,7 @@ function updateGoBackButton() {
         bubbles: true,
         cancelable: true
       });
-      document.dispatchEvent(escapeEvent);
+      (document.activeElement || document).dispatchEvent(escapeEvent);
     };
 
     target.parentNode.insertBefore(goBackDiv, target.nextSibling);
@@ -105,6 +116,11 @@ observer.observe(document.body, {
   attributeFilter: ['class'],
 });
 
+// Debug: Log all keydown events to verify Escape is firing
+document.addEventListener('keydown', (e) => {
+  console.log('Keydown event:', e);
+});
+
 // Inject style
 const style = document.createElement('style');
 style.textContent = `
@@ -116,10 +132,6 @@ style.textContent = `
     bottom: 20% !important;
     background: none !important;
 }
-
-
-
-  
 `;
 document.head.appendChild(style);
 
@@ -129,6 +141,7 @@ document.head.appendChild(style);
 
 
 
+//////////// END SCRIPT ABOVE
 	
 
 }
