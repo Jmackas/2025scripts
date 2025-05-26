@@ -1,0 +1,65 @@
+// https://g.co/gemini/share/50091fc0826a
+
+///////////////
+/////////////// Open the inbox view task in a new tab INSTEAD of on the same window
+///////////////
+
+//////////// START SCRIPT BELOW
+	
+// Function to apply the event listener
+function applyClickListener() {
+    const fullscreenButton = document.querySelector('[data-test="task-view-header__button-toggle-fullscreen-mode-not"]');
+
+    if (fullscreenButton) {
+        // Check if the listener is already attached to avoid adding it multiple times
+        // This is a simple check, more robust methods might involve a custom property or a Set
+        if (!fullscreenButton.hasAttribute('data-custom-listener-attached')) {
+            fullscreenButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+
+                const taskIdButton = document.querySelector('[data-test="task-view-task-label__taskid-button"]');
+
+                if (taskIdButton) {
+                    const taskId = taskIdButton.textContent.trim();
+                    const fullUrl = "https://app.clickup.com/t/" + taskId;
+                    console.log("Opening URL in new tab:", fullUrl);
+                    window.open(fullUrl, '_blank');
+                } else {
+                    console.warn("Element with data-test='task-view-task-label__taskid-button' not found. Cannot construct URL.");
+                }
+            }, true); // Capturing phase listener
+
+            // Mark the button so we know a listener has been attached
+            fullscreenButton.setAttribute('data-custom-listener-attached', 'true');
+            console.log("Custom click listener attached to fullscreen button.");
+
+            // If the button is only added once, you can disconnect the observer here
+            // observer.disconnect(); // Uncomment this if you only expect the button to appear once
+        }
+    }
+}
+
+// Create a MutationObserver instance
+const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            // Check if the target button (or its parent containing it) was added
+            // A more performant check might target a specific parent container
+            // but for simplicity, we'll just try to apply the listener on any DOM change
+            applyClickListener();
+        }
+    }
+});
+
+// Start observing the document body for changes in its children
+// { childList: true, subtree: true } means it will watch for direct children changes
+// AND changes within any descendants of the body.
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Also call it once initially in case the button is already present when the script runs
+applyClickListener();
+
+
+
+//////////// END SCRIPT ABOVE
