@@ -214,7 +214,7 @@ ClickUp
 /* normal comments are minimised */
 
 .cu-comment__body-container {
-    height: 300px;
+    height: 200px;
     overflow: auto;
 }
 
