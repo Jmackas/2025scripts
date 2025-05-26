@@ -212,10 +212,12 @@ ClickUp
  
 /* Minimise size of comments easily in clickup */
 /* normal comments are minimised */
+/*
 .cu-comment__body-container {
     height: 200px;
     overflow: auto;
 }
+*/
 
 /* expanded emails are full size */
 .attachments-viewer_open .cu-comment__body-container {
