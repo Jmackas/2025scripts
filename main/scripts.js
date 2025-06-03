@@ -335,6 +335,7 @@ ClickUp
 }
 
 /* tagged email design */
+/*
 .cu-email-comment__created-via-email .cu-comment__body-container {
     height: 0;
 }
@@ -345,7 +346,7 @@ ClickUp
     font-weight: bold;
     content:'Tagged Email';
 }
-
+*/
 
 /* expanded emails are full size */
 .attachments-viewer_open .cu-comment__body-container {
