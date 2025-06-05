@@ -341,6 +341,10 @@ ClickUp
     opacity: 0.4;
 }
 
+.task-history-attachment.ng-star-inserted:hover {
+    opacity: 0.8;
+}
+
 /* expanded emails are full size */
 .attachments-viewer_open .cu-comment__body-container {
 	height: initial !important;
@@ -601,5 +605,4 @@ Misc
 `;
 
 document.head.appendChild(style);
-
 
