@@ -336,13 +336,15 @@ ClickUp
 
 /* tagged email attachments (hide them) */
 .task-history-attachment.ng-star-inserted {
-    height: 70px;
-    overflow: scroll;
+    height: 40px;
+    overflow: hidden;
     opacity: 0.4;
+    transition: .2s;
 }
 
 .task-history-attachment.ng-star-inserted:hover {
     opacity: 0.8;
+    height: initial;
 }
 
 /* expanded emails are full size */
