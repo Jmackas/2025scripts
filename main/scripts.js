@@ -447,6 +447,15 @@ Notion
     font-style: italic;
 }
 
+/* limit the number of lines a block/gallery element can show text - this adds an ellipsis after 8 lines */
+.notion-selectable.notion-page-block.notion-collection-item [aria-label="Start typing to edit text"] {
+  display: -webkit-box; /* 📦 Special display mode for multi-line ellipsis */
+  -webkit-line-clamp: 8; /* 🔢 Number of lines to show before cutting off */
+  -webkit-box-orient: vertical; /* ↕️ Arranges content vertically */
+  overflow: hidden; /* 🕵️ Hides overflow */
+  text-overflow: ellipsis; /* ✨ Adds ellipsis */
+  
+  }
 
 
 /*======================
