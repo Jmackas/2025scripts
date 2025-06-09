@@ -556,6 +556,11 @@ white-space:nowrap !important;
     background: rgb(255 255 0 / 15%);
 }
 
+/* CSS to hide the tablist tabs on Outlook */
+[role="tablist"] {
+    display: none;
+}
+
 
 /*======================
 *
