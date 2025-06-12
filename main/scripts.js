@@ -539,7 +539,8 @@ white-space:nowrap !important;
 
 
 
-/* CSS to colour the calendar columns */
+/* (doesn't work) CSS to colour the calendar columns */
+/*
 [style="height: 1440px; width: 48px;"]:nth-of-type(1) {
      background: rgb(0 128 0 / 15%);
 }
@@ -556,10 +557,7 @@ white-space:nowrap !important;
     background: rgb(255 255 0 / 15%);
 }
 
-/* CSS to hide the tablist tabs on Outlook */
-[role="tablist"] {
-    display: none;
-}
+*/
 
 
 /*======================
