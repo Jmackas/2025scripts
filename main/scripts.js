@@ -265,6 +265,40 @@ document.head.appendChild(style);
 
 
 
+//##############################
+//############################## Gemini
+//##############################
+if (window.location.hostname === "gemini.google.com") { 
+document.addEventListener('keydown', (event) => {
+    // Check if the Alt key is pressed
+    const isAltKey = event.altKey;
+
+    // Check if 'n' or 'N' key is pressed
+    const isNKey = event.key === 'n' || event.key === 'N';
+
+    // If Alt + N is pressed
+    if (isAltKey && isNKey) {
+        // Prevent the default browser action (e.g., opening a new tab/window)
+        // Note: For Alt+N, some browsers might not have a default action,
+        // but it's good practice to include preventDefault().
+        event.preventDefault();
+
+        // Select the target element using your provided selector
+        const targetElement = document.querySelector("#app-root > main > side-navigation-v2 > bard-sidenav-container > bard-sidenav > side-navigation-content > div > div > mat-action-list.mat-mdc-action-list.mat-mdc-list-base.mdc-list.top-action-list.ng-star-inserted > side-nav-action-button > button");
+
+        // If the element is found, programmatically click it
+        if (targetElement) {
+            targetElement.click();
+            console.log('Alt + N detected! The target button was clicked. 🚀');
+            // Add any desired visual feedback here, like a temporary message.
+        } else {
+            console.warn('Target button not found. Please ensure the selector is correct and the element exists on the page.');
+        }
+    }
+});
+
+}
+
 
 
 
