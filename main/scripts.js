@@ -268,6 +268,7 @@ document.head.appendChild(style);
 //##############################
 //############################## Gemini
 //##############################
+// Make a new prompt on alt+n key command
 if (window.location.hostname === "gemini.google.com") { 
 document.addEventListener('keydown', (event) => {
     // Check if the Alt key is pressed
@@ -299,6 +300,42 @@ document.addEventListener('keydown', (event) => {
 
 }
 
+
+
+
+
+//##############################
+//############################## Messenger
+//##############################
+// Make a new message on alt+n key command
+if (window.location.hostname === "messenger.com") { 
+document.addEventListener('keydown', (event) => {
+    // Check if the Alt key is pressed
+    const isAltKey = event.altKey;
+
+    // Check if 'n' or 'N' key is pressed
+    const isNKey = event.key === 'n' || event.key === 'N';
+
+    // If Alt + N is pressed
+    if (isAltKey && isNKey) {
+        // Prevent the default browser action (e.g., opening a new tab/window)
+        event.preventDefault();
+
+        // Select the target element, now specifically an 'a' element with the aria-label
+        const targetElement = document.querySelector('a[aria-label="New message"]');
+
+        // If the element is found, programmatically click it
+        if (targetElement) {
+            targetElement.click();
+            console.log('Alt + N detected! The target link was clicked. 🚀');
+            // Add any desired visual feedback here, like a temporary message.
+        } else {
+            console.warn('Target link not found. Please ensure the selector is correct and the element exists on the page.');
+        }
+    }
+});
+
+}
 
 
 
