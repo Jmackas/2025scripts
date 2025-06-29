@@ -303,6 +303,56 @@ document.addEventListener('keydown', (event) => {
 
 
 
+//##############################
+//############################## Reddit
+//##############################
+
+
+if (window.location.hostname === "reddit.com") {
+
+
+
+	///////////////
+/////////////// Hide the sidebar on reddit on old.reddit view
+///////////////
+	// Create the toggle button
+document.querySelector('.side').style.display = 'none';
+
+const toggleBtn = document.createElement('button');
+toggleBtn.textContent = '☰';
+toggleBtn.style.position = 'fixed';
+toggleBtn.style.top = '10px';
+toggleBtn.style.right = '10px';
+toggleBtn.style.zIndex = '9999';
+toggleBtn.style.padding = '10px';
+toggleBtn.style.background = '#333';
+toggleBtn.style.color = '#fff';
+toggleBtn.style.border = 'none';
+toggleBtn.style.borderRadius = '4px';
+toggleBtn.style.cursor = 'pointer';
+
+document.body.appendChild(toggleBtn);
+
+// Toggle function
+toggleBtn.addEventListener('click', function() {
+    const side = document.querySelector('.side');
+    if (side.style.display === 'none') {
+        side.style.display = 'block';
+    } else {
+        side.style.display = 'none';
+    }
+});
+
+
+
+
+
+
+
+	
+
+}
+
 
 
 
