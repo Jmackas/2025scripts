@@ -308,7 +308,7 @@ document.addEventListener('keydown', (event) => {
 //##############################
 
 
-if (window.location.hostname === "reddit.com") {
+if (window.location.hostname === "www.reddit.com") {
 
 
 
