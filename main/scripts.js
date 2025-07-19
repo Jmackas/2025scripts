@@ -712,6 +712,11 @@ shreddit-comments-page-ad {
     width: 250px;
 }
 
+/* make the images displaying on teh comments a bit smaller */
+[alt="Image from link"] {
+    width: 400px;
+}
+
 /*======================
 *
 *
