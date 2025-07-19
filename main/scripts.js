@@ -349,6 +349,35 @@ toggleBtn.addEventListener('click', function() {
 
 
 
+
+	///////////////
+/////////////// Display all ahref links to images in the comments as actual images
+///////////////
+	    // Get all anchor tags on the page
+    const links = document.querySelectorAll('a');
+
+    // Loop through each link
+    links.forEach(link => {
+      // Check if the link's text content is exactly "<image>"
+      if (link.textContent.trim() === '<image>') {
+        // Get the image URL from the href attribute
+        const imageUrl = link.href;
+
+        // Create a new Image element
+        const imgElement = document.createElement('img');
+        imgElement.src = imageUrl;
+        imgElement.alt = 'Image from link'; // Good practice for accessibility!
+
+        // Replace the link's text content with the new Image element
+        link.replaceChild(imgElement, link.firstChild);
+      }
+    });
+
+
+
+	
+
+
 	
 
 }
