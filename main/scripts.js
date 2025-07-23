@@ -246,6 +246,11 @@ ClickUp
            /* border-left: 2px solid var(--cu-border-default); */
 }
 
+/* reduce the size of the activity comments and post on clickup - make them 85/90% width */
+cu-task-activity-stream-item-wrapper.cu-task-activity-stream-item-wrapper {
+    width: 85%;
+}
+
 /*======================
 *
 *
