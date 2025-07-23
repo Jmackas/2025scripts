@@ -22,7 +22,24 @@ document.head.appendChild(Object.assign(document.createElement('script'), {src: 
 
 
 
+//##############################
+//############################## ClickUp
+//##############################
+if (window.location.hostname === "app.clickup.com") {
 
+
+///////////////
+/////////////// Disable Ctrl+S
+///////////////
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && e.key === 's') {
+    e.preventDefault();
+    // Add your custom save logic here
+    console.log('Ctrl+S pressed, custom save triggered');
+  }
+});
+
+}
 
 //##############################
 //############################## Reddit
