@@ -252,9 +252,9 @@ cu-task-activity-stream-item-wrapper.cu-task-activity-stream-item-wrapper {
 }
 
 /* reduce the size of the inbox view of tasks */
-.inner[_ngcontent-ng-c2993102656] {
-    width: 90%;
-    }
+cu3-notifications-list-layout .inner {
+    width: 90% !important;
+}
 
 /*======================
 *
