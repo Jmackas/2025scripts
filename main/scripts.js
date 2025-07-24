@@ -251,6 +251,11 @@ cu-task-activity-stream-item-wrapper.cu-task-activity-stream-item-wrapper {
     width: 85%;
 }
 
+/* reduce the size of the inbox view of tasks */
+.inner[_ngcontent-ng-c2993102656] {
+    width: 90%;
+    }
+
 /*======================
 *
 *
