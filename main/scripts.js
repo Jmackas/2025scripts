@@ -424,6 +424,10 @@ white-space:nowrap !important;
 
 */
 
+/* hide the annoying tab view on outlook */
+[role="tablist"] {
+    display: none;
+}
 
 /*======================
 *
