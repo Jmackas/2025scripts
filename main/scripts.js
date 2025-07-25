@@ -424,6 +424,11 @@ white-space:nowrap !important;
 
 */
 
+/* hide the tabs on the bottom of emails - so annoying */
+[data-app-section="MailReadCompose"] [role="tablist"] {
+    display: none;
+}
+
 
 
 /*======================
