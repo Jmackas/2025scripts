@@ -471,6 +471,11 @@ shreddit-comments-page-ad {
     width: 400px;
 }
 
+/* hide promoted links */
+.promotedlink {
+    display: none;
+}
+
 /*======================
 *
 *
