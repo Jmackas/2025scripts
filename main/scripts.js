@@ -246,6 +246,8 @@ ClickUp
            /* border-left: 2px solid var(--cu-border-default); */
 }
 
+
+
 /* reduce the size of the activity comments and post on clickup - make them 85/90% width */
 cu-task-activity-stream-item-wrapper.cu-task-activity-stream-item-wrapper {
     width: 85%;
@@ -268,7 +270,10 @@ Google Keeper
     margin-top: 1000px;
 }
 
-
+/* Side window shadow */
+.cu-task-view__container-ghost {
+    box-shadow: -10px 0 15px -5px rgb(190 190 190 / 60%);
+}
 
 
 /*======================
