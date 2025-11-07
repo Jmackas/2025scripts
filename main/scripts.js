@@ -365,6 +365,15 @@ Notion
   
   }
 
+/* Notion - make the latest comment more prominent */
+  .notion-page-view-discussion [style="padding-top: 8px; padding-inline: 16px; padding-bottom: 8px;"] {
+    color: #a9a9a9;
+}
+
+.notion-page-view-discussion [style="padding-top: 8px; padding-inline: 16px; padding-bottom: 8px;"]:last-of-type {
+    color: initial;
+}
+
 
 /*======================
 *
