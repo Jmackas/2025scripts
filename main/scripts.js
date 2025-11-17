@@ -43,6 +43,23 @@ document.addEventListener('keydown', function(e) {
 }
 
 
+//##############################
+//############################## Gemini
+//##############################
+document.addEventListener("keydown", function(event) {
+  // Check if Alt + N is pressed
+  if (event.altKey && event.key.toLowerCase() === "n") {
+    event.preventDefault(); // prevent default browser behavior
+
+    // Find the element with aria-label="Start new chat"
+    const target = document.querySelector('[aria-label="Start new chat"]');
+    if (target) {
+      target.click(); // simulate a click
+    }
+  }
+});
+
+
 
 //##############################
 //############################## Gemini
