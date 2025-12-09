@@ -182,9 +182,7 @@ toggleBtn.addEventListener('click', function() {
 // Make the popup window for tasks opaque background
 if (window.location.hostname === "https://planner.cloud.microsoft/") { 
 
-.ms-Modal .ms-Overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-}
+/* nothing */
 }
 
 
@@ -320,6 +318,17 @@ cu-task-activity-stream-item-wrapper.cu-task-activity-stream-item-wrapper {
 /* reduce the size of the inbox view of tasks */
 cu3-notifications-list-layout .inner {
     width: 90% !important;
+}
+
+/*======================
+*
+*
+Microsoft Planner
+*
+*
+ ====================*/
+.ms-Modal .ms-Overlay {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /*======================
