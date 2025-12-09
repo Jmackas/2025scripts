@@ -176,7 +176,16 @@ toggleBtn.addEventListener('click', function() {
 }
 
 
+//##############################
+//############################## Ms Planner
+//##############################
+// Make the popup window for tasks opaque background
+if (window.location.hostname === "https://planner.cloud.microsoft/") { 
 
+.ms-Modal .ms-Overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+}
 
 
 
