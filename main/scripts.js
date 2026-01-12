@@ -550,12 +550,14 @@ Misc
 
 
 /* Gemini "Alt + N" text on the new chat button */
+/*
 [aria-label="New chat"]:after {
     content: "Alt + N";
     font-size: small;
     font-family: sans-serif;
     font-weight: bold;
 }
+*/
 
 /* Gemini hide the created images */
 .my-stuff-recents-preview {
